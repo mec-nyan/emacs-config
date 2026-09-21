@@ -43,11 +43,31 @@
 
   ;; Keys
 
-  ;; Navigation
+  ;; Windows
   (define-key evil-normal-state-map (kbd "M-j") 'evil-window-down)
   (define-key evil-normal-state-map (kbd "M-k") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "M-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd "M-l") 'evil-window-right)
-  )
 
+  (define-key evil-normal-state-map (kbd "M-o") 'delete-other-windows)
+
+  ;; Navigation
+  (define-key evil-normal-state-map (kbd "SPC") 'evil-scroll-page-down)
+  (define-key evil-normal-state-map (kbd "DEL") 'evil-scroll-page-up)
+
+  (define-key evil-normal-state-map (kbd "g e") 'evil-goto-line)
+
+  ;; Exit/suspend
+  (define-key evil-normal-state-map (kbd "M-q") 'evil-quit)
+  (define-key evil-normal-state-map (kbd "M-z") 'suspend-emacs)
+
+  ;; Save
+  (define-key evil-insert-state-map (kbd "M-w") 'back-to-normal-and-write)
+  (define-key evil-normal-state-map (kbd "M-w") 'evil-write)
+
+  ;; Comments
+  (define-key evil-normal-state-map (kbd "g c c") 'vim-comment-line)
+  (define-key evil-visual-state-map (kbd "g c") 'comment-or-uncomment-region)
+  (define-key evil-normal-state-map (kbd "<leader>c") 'vim-comment-line)
+)
 (evil-mode)
