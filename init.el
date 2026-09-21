@@ -71,3 +71,25 @@
   (define-key evil-normal-state-map (kbd "<leader>c") 'vim-comment-line)
 )
 (evil-mode)
+
+
+;; Quality-of-life stuff ;;
+
+;; Completion
+
+(require 'company)
+(global-company-mode t)
+(company-tng-mode)
+
+;; Smart mode line
+(sml/setup)
+
+;; Delimiters
+(rainbow-delimiters-mode-enable)
+
+
+;; Personal preference
+;;
+(menu-bar-mode -1)  ;; Hide the menu bar.
+(global-display-line-numbers-mode t)  ;; Always show line numbers.
+(setq-default tab-width 4)  ;; Actually, I prefer tabs over spaces, and 8 spaces is the ideal tab with. Anyway ...
